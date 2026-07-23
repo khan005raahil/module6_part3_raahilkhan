@@ -15,10 +15,12 @@ spec:
       labels:
         app: studentportfolio
     spec:
+      imagePullSecrets:
+        - name: ghcr-creds
       containers:
         - name: studentportfolio
-          image: studentportfolio:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/khan005raahil/module6_part3_raahilkhan-studentportfolio:latest
+          imagePullPolicy: Always
 
           ports:
             - name: http
